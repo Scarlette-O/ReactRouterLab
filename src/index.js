@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const Red = (props) => {
   return (
@@ -19,16 +20,27 @@ const Blue = (props) => {
 
 const Main = (props) => {
   return (
-    <div id='container'>
 
-      <div id='navbar'>
-        {/* navigation here */}
-      </div>
+    <BrowserRouter>
+      <div id='container'>
 
-      <div id='main-section'>
-        {/* routes here */}
+
+        <div id='navbar'>
+          {/* navigation here */}
+        </div>
+
+        <div id='main-section'>
+          <Route path="/red">
+            <Red />
+          </Route>
+
+          <Route path="/blue">
+            <Blue />
+          </Route>
+
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   )
 }
 
